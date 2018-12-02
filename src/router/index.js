@@ -16,7 +16,7 @@ export default new Router({
           component: HelloWorld
       },
       {
-          path: '/backend/:id',
+          path: '/backend',
           name: 'Backend',
           component: BackendCalendar,
           props: true
