@@ -1,0 +1,16 @@
+.rounded-logo{
+  width: 200px;
+  height: 200px;
+  display: flex;
+
+  border-radius: 100px;
+  align-items: center;
+  justify-content: center;
+
+  background-color: #ddd;
+
+  img{
+    max-height: 80%;
+    max-width: 80%;
+  }
+}

@@ -1,8 +1,6 @@
 <template>
     <div class="backend-calendar">
-        <div class="card">
-            
-        </div>
+
     </div>
 </template>
 
