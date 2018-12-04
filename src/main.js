@@ -4,14 +4,19 @@ import Vue from 'vue'
 import App from './App'
 import router from './router'
 import BootstrapVue from 'bootstrap-vue';
+import "vue-material-design-icons/styles.css";
+import MenuIcon from "vue-material-design-icons/Menu.vue";
 
 Vue.use(BootstrapVue);
-Vue.config.productionTip = false
+Vue.config.productionTip = false;
 
 /* eslint-disable no-new */
 new Vue({
   el: '#app',
   router,
-  components: { App },
+  components: {
+    App,
+    MenuIcon
+  },
   template: '<App/>'
 })

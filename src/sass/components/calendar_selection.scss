@@ -1,0 +1,73 @@
+.calendar-selection{
+  margin-top: 25vh;
+
+  display: flex;
+
+  transition: color 0.2s ease-in-out;
+
+  text-align: center;
+  font-size: 1.75em;
+  color: white;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  cursor: pointer;
+  user-select: none;
+
+  .selection-link{
+    color: white;
+    text-decoration: none;
+    transition: color 0.2s ease-in-out;
+  }
+
+  .selection-title{
+    padding: 15px;
+  }
+
+  .selection-image{
+    width: 75%;
+    height: 75%;
+  }
+
+  &.backend:hover{
+    color: $backend;
+    a{
+      color: $backend;
+    }
+    .selection-image{
+      border-color: $backend;
+    }
+  }
+
+  &.frontend:hover{
+    color: $frontend;
+    a{
+      color: $frontend;
+    }
+    .selection-image{
+      border-color: $frontend;
+    }
+  }
+
+  &.mobile:hover{
+    color: $mobile;
+    a{
+      color: $mobile;
+    }
+    .selection-image{
+      border-color: $mobile;
+    }
+  }
+
+  &.design:hover{
+    color: $design;
+    a{
+      color: $design;
+    }
+    .selection-image{
+      border-color: $design;
+    }
+  }
+
+}
