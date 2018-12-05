@@ -4,8 +4,51 @@ body::-webkit-scrollbar{
 #app {
   width: 100%;
   min-height: 100vh;
-
   background: url("../assets/christmas_town.svg");
   background-size: auto 100%;
 }
 
+.calendar-heading{
+  margin-left: auto;
+  margin-right: auto;
+
+  padding-top: 5vh;
+  height: 25vh;
+  width: 100vh;
+
+  text-align: center;
+  color: white;
+  font-size: 4em;
+
+  .subheading{
+    font-size: .5em;
+  }
+}
+
+.calendar-place{
+  background-color: black;
+  width: 100%;
+  margin-bottom: 15vh;
+  border-top: 3px solid white;
+  &_heading{
+    text-align: center;
+    color: white;
+    font-size: 1.5em;
+    padding: 25px;
+  }
+}
+
+.calendar{
+
+  &-tile-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &-tile{
+    width: 150px;
+    height: 150px;
+    border: 1px solid green;
+  }
+}
