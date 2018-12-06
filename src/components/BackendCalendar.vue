@@ -1,6 +1,6 @@
 <template>
     <div class="backend-calendar" id="backend-calendar">
-        <div class="container-fluid">
+        <div>
             <div class="calendar-heading">
                 Backend
                 <div class="subheading">
@@ -11,95 +11,17 @@
                 <div class="calendar-place_heading">
                     Backendowy kalendarz adwentowy
                 </div>
-                <div class="calendar">
-                    <div class="container-fluid">
-                        <div class="row">
-                            <div class="col-12 col-sm-6 col-md-4 col-lg-3 calendar-tile-container">
-                                <div class="calendar-tile"></div>
-                            </div>
-                            <div class="col-12 col-sm-6 col-md-4 col-lg-3 calendar-tile-container">
-                                <div class="calendar-tile"></div>
-                            </div>
-                            <div class="col-12 col-sm-6 col-md-4 col-lg-3 calendar-tile-container">
-                                <div class="calendar-tile"></div>
-                            </div>
-                            <div class="col-12 col-sm-6 col-md-4 col-lg-3 calendar-tile-container">
-                                <div class="calendar-tile"></div>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-12 col-sm-6 col-md-4 col-lg-3 calendar-tile-container">
-                                <div class="calendar-tile"></div>
-                            </div>
-                            <div class="col-12 col-sm-6 col-md-4 col-lg-3 calendar-tile-container">
-                                <div class="calendar-tile"></div>
-                            </div>
-                            <div class="col-12 col-sm-6 col-md-4 col-lg-3 calendar-tile-container">
-                                <div class="calendar-tile"></div>
-                            </div>
-                            <div class="col-12 col-sm-6 col-md-4 col-lg-3 calendar-tile-container">
-                                <div class="calendar-tile"></div>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-12 col-sm-6 col-md-4 col-lg-3 calendar-tile-container">
-                                <div class="calendar-tile"></div>
-                            </div>
-                            <div class="col-12 col-sm-6 col-md-4 col-lg-3 calendar-tile-container">
-                                <div class="calendar-tile"></div>
-                            </div>
-                            <div class="col-12 col-sm-6 col-md-4 col-lg-3 calendar-tile-container">
-                                <div class="calendar-tile"></div>
-                            </div>
-                            <div class="col-12 col-sm-6 col-md-4 col-lg-3 calendar-tile-container">
-                                <div class="calendar-tile"></div>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-12 col-sm-6 col-md-4 col-lg-3 calendar-tile-container">
-                                <div class="calendar-tile"></div>
-                            </div>
-                            <div class="col-12 col-sm-6 col-md-4 col-lg-3 calendar-tile-container">
-                                <div class="calendar-tile"></div>
-                            </div>
-                            <div class="col-12 col-sm-6 col-md-4 col-lg-3 calendar-tile-container">
-                                <div class="calendar-tile"></div>
-                            </div>
-                            <div class="col-12 col-sm-6 col-md-4 col-lg-3 calendar-tile-container">
-                                <div class="calendar-tile"></div>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-12 col-sm-6 col-md-4 col-lg-3 calendar-tile-container">
-                                <div class="calendar-tile"></div>
-                            </div>
-                            <div class="col-12 col-sm-6 col-md-4 col-lg-3 calendar-tile-container">
-                                <div class="calendar-tile"></div>
-                            </div>
-                            <div class="col-12 col-sm-6 col-md-4 col-lg-3 calendar-tile-container">
-                                <div class="calendar-tile"></div>
-                            </div>
-                            <div class="col-12 col-sm-6 col-md-4 col-lg-3 calendar-tile-container">
-                                <div class="calendar-tile"></div>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-12 col-sm-6 col-md-4 col-lg-3 calendar-tile-container">
-                                <div class="calendar-tile"></div>
-                            </div>
-                            <div class="col-12 col-sm-6 col-md-4 col-lg-3 calendar-tile-container">
-                                <div class="calendar-tile"></div>
-                            </div>
-                            <div class="col-12 col-sm-6 col-md-4 col-lg-3 calendar-tile-container">
-                                <div class="calendar-tile"></div>
-                            </div>
-                            <div class="col-12 col-sm-6 col-md-4 col-lg-3 calendar-tile-container">
-                                <div class="calendar-tile"></div>
-                            </div>
-                        </div>
+                <div class="calendar container">
+                    <div class="calendar-tile-container" v-for="">
+                        <div class="calendar-tile"></div>
                     </div>
                 </div>
             </div>
+                <footer>
+                    <div class="jumbotron rounded-0">
+                        AKAI 2018
+                    </div>
+                </footer>
         </div>
     </div>
 </template>
@@ -112,8 +34,19 @@
         name: "BackendCalendar",
         data() {
             return {
-                apiAddr: appData.apiAddr.tasks
+                apiAddr: appData.apiAddr.tasks,
+                apiData: null,
             }
+        },
+        mounted() {
+            this.axios
+                .get(appData.apiAddr.tasks)
+                .then(response => {
+                    this.apiData = response;
+                })
+        },
+        methods: {
+
         }
     }
 </script>

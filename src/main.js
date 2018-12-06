@@ -6,7 +6,10 @@ import router from './router'
 import BootstrapVue from 'bootstrap-vue';
 import "vue-material-design-icons/styles.css";
 import MenuIcon from "vue-material-design-icons/Menu.vue";
+import axios from 'axios';
+import VueAxios from 'vue-axios';
 
+Vue.use(VueAxios, axios);
 Vue.use(BootstrapVue);
 Vue.config.productionTip = false;
 

@@ -6,6 +6,7 @@ body::-webkit-scrollbar{
   min-height: 100vh;
   background: url("../assets/christmas_town.svg");
   background-size: auto 100%;
+
 }
 
 .calendar-heading{
@@ -27,9 +28,11 @@ body::-webkit-scrollbar{
 
 .calendar-place{
   background-color: black;
-  width: 100%;
-  margin-bottom: 15vh;
-  border-top: 3px solid white;
+  border-top: 1px solid white;
+  margin: 0px 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   &_heading{
     text-align: center;
     color: white;
@@ -39,9 +42,9 @@ body::-webkit-scrollbar{
 }
 
 .calendar{
-
+  margin: 25px;
   &-tile-container{
-    display: flex;
+    display: inline-flex;
     justify-content: center;
     align-items: center;
   }
@@ -50,5 +53,15 @@ body::-webkit-scrollbar{
     width: 150px;
     height: 150px;
     border: 1px solid green;
+  }
+}
+
+footer{
+  .jumbotron{
+    text-align: center;
+    margin: 15px 15px 15px 0;
+    color: white;
+    padding: 5px;
+    background-color: #111;
   }
 }
