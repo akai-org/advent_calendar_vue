@@ -47,12 +47,20 @@ body::-webkit-scrollbar{
     display: inline-flex;
     justify-content: center;
     align-items: center;
+    border: 1px solid green;
+    margin: 3px 3px;
   }
 
   &-tile{
     width: 150px;
     height: 150px;
-    border: 1px solid green;
+    background: #333;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 2em;
   }
 }
 

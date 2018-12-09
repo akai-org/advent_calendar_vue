@@ -6,9 +6,8 @@
 
 <script>
     import './sass/app.scss';
-
     export default {
-        name: 'App',
+        name: 'App'
     }
 </script>
 
