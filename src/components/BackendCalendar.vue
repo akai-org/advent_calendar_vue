@@ -1,6 +1,6 @@
 <template>
     <div class="backend-calendar" id="backend-calendar">
-        <popup></popup>
+        <popup v-bind:task="currentTask"></popup>
         <div class="calendar-heading">
             Backend
             <div class="subheading">
@@ -13,17 +13,13 @@
             </div>
             <div class="calendar container">
                 <div class="calendar-tile-container" v-for="task in tasks">
-                    <div class="calendar-tile" @click="displayPopup(task.id)">
+                    <div class="calendar-tile" @click="displayPopup(getDateDay(task.date))">
                         {{getDateDay(task.date)}}
                     </div>
                 </div>
             </div>
         </div>
-        <footer>
-            <div class="jumbotron rounded-0">
-                AKAI 2018
-            </div>
-        </footer>
+        <footer></footer>
     </div>
 </template>
 
@@ -31,23 +27,30 @@
 
     import appData from '../appData';
     import Popup from '../components/Popup';
+    import Footer from '../components/Footer';
+
     export default {
         name: "BackendCalendar",
         components: {
-            Popup
+            Popup,
+            Footer
         },
         data() {
             return {
-                apiAddr: appData.apiAddr.tasks,
-                tasks: null,
+                apiAddr: appData.apiAddr.backendTasks,
+                tasks: [],
+                currentTask: {
+                    date: new Date(),
+                    name: 'noname',
+                    description: 'nodescription'
+                }
             }
         },
         mounted() {
             this.axios
-                .get(appData.apiAddr.tasks)
+                .get(this.apiAddr)
                 .then((response) => {
                     this.tasks = response.data.data.tasks;
-                    console.log(this.tasks);
                 });
 
         },
@@ -57,9 +60,12 @@
                 return parsedDate.getUTCDate();
             },
 
-            displayPopup(tileId){
+            displayPopup(taskDate) {
+                this.currentTask = this.tasks[taskDate - 1];
+                document.getElementById('calendar-popup').classList.add('active');
+            },
 
-            }
+
         }
     }
 </script>

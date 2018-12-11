@@ -1,10 +1,37 @@
 #calendar-popup{
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.75);
+  position: fixed;
+  z-index: 100;
+  display: none;
+  &.active{
+    display: block;
+  }
 
-  .active{
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0,0,0,0.75);
-    position: fixed;
-    z-index: 100;
+  .popup-heading{
+    text-align: center;
+    font-size: 2.5em;
+    font-weight: bold;
+  }
+
+  .popup-content{
+    text-align: center;
+    padding: 1.5em;
+    .task-name{
+      padding: 1.5em;
+      font-weight: bold;
+      font-size: 2em;
+    }
+    .task-description{
+        padding: 0 1em;
+    }
+  }
+
+  .popup-options{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2.5em;
   }
 }

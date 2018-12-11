@@ -5,7 +5,10 @@ const appData = (function(){
     return {
         apiAddr: {
             main: mainAddress,
-            tasks: mainAddress + '/tasks?category_id=1',
+            backendTasks: mainAddress + '/tasks?category_id=1',
+            frontendTasks: mainAddress + '/tasks?category_id=2',
+            mobileTasks: mainAddress + '/tasks?category_id=3',
+            designTasks: mainAddress + '/tasks?category_id=4',
             categories: mainAddress + '/categories'
         }
     }
