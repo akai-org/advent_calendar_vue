@@ -1,0 +1,13 @@
+#frontend-calendar.frontend-calendar{
+  background: rgba(0,0,0,0.75);
+  min-height: 100vh;
+  min-width: 100vw;
+
+  .calendar-place{
+    border-color: $frontend;
+  }
+
+  .calendar-tile:hover{
+    background: $frontend;
+  }
+}

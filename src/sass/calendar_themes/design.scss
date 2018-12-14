@@ -1,0 +1,13 @@
+#design-calendar.design-calendar{
+  background: rgba(0,0,0,0.75);
+  min-height: 100vh;
+  min-width: 100vw;
+
+  .calendar-place{
+    border-color: $design;
+  }
+
+  .calendar-tile:hover{
+    background: $design;
+  }
+}

@@ -1,0 +1,13 @@
+#mobile-calendar.mobile-calendar{
+  background: rgba(0,0,0,0.75);
+  min-height: 100vh;
+  min-width: 100vw;
+
+  .calendar-place{
+    border-color: $mobile;
+  }
+
+  .calendar-tile:hover{
+    background: $mobile;
+  }
+}

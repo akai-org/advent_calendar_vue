@@ -33,6 +33,7 @@ body::-webkit-scrollbar{
   display: flex;
   justify-content: center;
   align-items: center;
+
   &_heading{
     text-align: center;
     color: white;
@@ -43,24 +44,41 @@ body::-webkit-scrollbar{
 
 .calendar{
   margin: 25px;
+  
+  align-items: center;
+  justify-content: center;
+
   &-tile-container{
     display: inline-flex;
+
+    margin: 3px 3px;
+
+    overflow: hidden;
+    border-radius: 10px;
+    border: 1px solid white;
+
     justify-content: center;
     align-items: center;
-    border: 1px solid green;
-    margin: 3px 3px;
   }
 
   &-tile{
     width: 150px;
     height: 150px;
-    background: #333;
-    cursor: pointer;
     display: flex;
+
+    cursor: pointer;
     justify-content: center;
     align-items: center;
-    color: white;
     font-size: 2em;
+
+    background: rgba(0,0,0,0);
+    color: white;
+
+    -webkit-transition: background 0.2s ease-in-out;
+    -moz-transition: background 0.2s ease-in-out;
+    -ms-transition: background 0.2s ease-in-out;
+    -o-transition: background 0.2s ease-in-out;
+    transition: background 0.2s ease-in-out;
   }
 }
 

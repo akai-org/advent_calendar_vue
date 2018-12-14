@@ -6,4 +6,8 @@
   .calendar-place{
     border-color: $backend;
   }
+
+  .calendar-tile:hover{
+    background: $backend;
+  }
 }
